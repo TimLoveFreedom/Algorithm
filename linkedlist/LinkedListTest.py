@@ -9,12 +9,12 @@ Explanation: 342 + 465 = 807.
 LinkedListA=SingleLinkedList()
 LinkedListA.append(2)
 LinkedListA.append(4)
-LinkedListA.append(6)
+LinkedListA.append(3)
 LinkedListB=SingleLinkedList()
 LinkedListB.append(5)
 LinkedListB.append(6)
 LinkedListB.append(4)
-LinkedListB.append(1)
+
 
 LinkedListResult=SingleLinkedList()
 currentA=LinkedListA._head
@@ -30,7 +30,8 @@ while currentA!=None and currentB!=None:
 
 #多余的节点补上
 if currentA==None and currentB==None:
-    pass
+    if tmpTag!=0:
+        LinkedListResult.append(tmpTag)
 else:
     current=currentA if currentB==None else currentB
     LinkedListResult.append(current.value+tmpTag)
